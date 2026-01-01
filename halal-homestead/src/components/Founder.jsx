@@ -22,7 +22,11 @@ export default function Founder() {
         </div>
 
         <div className="md:pl-40">
-          <h2 className="text-3xl font-bold mb-4">Meet the Founder</h2>
+          <div className="max-w-3xl mb-8">
+            <p className="text-sm uppercase tracking-widest text-gray-500 font-semibold mb-2">Our Story</p>
+            <h2 className="text-5xl font-bold mb-4">Meet the <span className="text-red-700">Founder</span></h2>
+            <p className="text-gray-600 text-lg">From a passion for halal and quality to building a brand that serves the community.</p>
+          </div>
 
           <div className="prose max-w-none text-slate-800">
             <p>Hi! My name is Muhammad Zaahid Husain and I am a current Sophomore at Lightridge High School in the Northern Virginia area.</p>

@@ -7,9 +7,17 @@ export default function Products() {
   return (
     <section
       id="products"
-      className="px-6 py-20 bg-gray-50 animate-fade-in animate-duration-800"
+      className="px-6 py-20 bg-white animate-fade-in animate-duration-800"
     >
-      <h2 className="text-4xl font-bold text-center mb-12">Our Jerky</h2>
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <p className="text-sm uppercase tracking-widest text-gray-500 font-semibold mb-2">Our Flavors</p>
+        <h2 className="text-5xl font-bold mb-4">
+          Discover Your <span className="text-red-700">Perfect</span> Flavor
+        </h2>
+        <p className="text-gray-600 text-lg">
+          From classic to bold, each flavor is crafted to perfection using premium halal beef.
+        </p>
+      </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
         <JerkyCard

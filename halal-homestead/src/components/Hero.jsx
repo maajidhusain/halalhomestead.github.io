@@ -45,36 +45,53 @@ export default function Hero() {
       ref={ref}
       className="h-screen relative overflow-hidden"
       style={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: `${vars.bgScale * 100}%`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'scroll',
         width: '100vw',
         marginLeft: 'calc(50% - 50vw)',
         marginRight: 'calc(50% - 50vw)',
-        transition: 'background-size 120ms linear'
+        backgroundColor: '#1f2937'
       }}
       aria-label="Halal Homestead hero"
     >
-      <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,${0.2 + vars.overlayA / 2}), rgba(0,0,0,${vars.overlayA}))`, transition: 'background 120ms linear' }} />
+      <img
+        src={bg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          transform: `scale(${vars.bgScale})`,
+          transition: 'transform 120ms linear',
+          zIndex: 0
+        }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 flex items-center gap-8 py-24 h-full" style={{ transform: `translateY(${vars.contentY}px) scale(${vars.contentScale})`, transition: 'transform 120ms linear' }}>
-        <div className="flex-1 text-white">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">Bold Taste — Fully Halal.</h1>
-          <p className="mt-4 text-lg md:text-xl text-white/90">Small-batch jerky crafted responsibly — big flavor, honest ingredients.</p>
-          <div className="mt-8">
-            <a href="#products" className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-transform transform hover:-translate-y-0.5">Shop Jerky</a>
+      <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,0,0,${0.2 + vars.overlayA / 2}), rgba(0,0,0,${vars.overlayA}))`, transition: 'background 120ms linear', zIndex: 1 }} />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center py-24 h-full" style={{ transform: `translateY(${vars.contentY}px) scale(${vars.contentScale})`, transition: 'transform 120ms linear' }}>
+        <p className="text-sm font-semibold text-gray-300 mb-4">Sold At In-Person Events</p>
+        
+        <div className="text-white max-w-2xl">
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg mb-4">
+            Authentic <span className="text-amber-400">Halal</span> Jerky for the <span className="text-amber-400">DMV</span>
+          </h1>
+          
+          <p className="mt-4 text-lg text-gray-100">Handcrafted with premium beef, traditional recipes, and 100% Halal. The protein snack you've been waiting for to be shelved.</p>
+          
+          <div className="mt-8 flex gap-4 justify-center">
+            <a href="#story" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1">See What We Offer</a>
+            <a href="#products" className="inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/10 transition-all">Explore Flavors</a>
           </div>
-        </div>
 
-        <div className="flex-none">
-          <div className="relative">
-            <div className="absolute -left-8 -top-8 w-36 h-36 rounded-[50%] bg-pink-400/30 blur-3xl" />
-            <div className="absolute -right-6 bottom-0 w-44 h-44 rounded-[50%] bg-emerald-300/30 blur-3xl" />
-
-            <div className="rounded-3xl p-4 bg-white/90 shadow-2xl transform rotate-6 hover:rotate-0 transition">
-              <img src={product} alt="Halal Homestead product" className="w-56 h-56 object-cover rounded-full" style={{ transform: `scale(${vars.productScale})`, transition: 'transform 120ms linear' }} />
+          <div className="mt-12 flex gap-12 text-sm justify-center">
+            <div>
+              <div className="text-2xl font-bold text-amber-400">100%</div>
+              <div className="text-gray-300">Halal</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-amber-400">3+</div>
+              <div className="text-gray-300">Unique Flavors</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-amber-400">DMV</div>
+              <div className="text-gray-300">Local Events</div>
             </div>
           </div>
         </div>

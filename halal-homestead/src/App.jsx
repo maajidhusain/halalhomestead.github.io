@@ -1,7 +1,9 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Story from './components/Story'
 import Products from './components/Products'
 import Founder from './components/Founder'
+import YeaPitch from './components/YeaPitch'
 import Contact from './components/Contact'
 
 export default function App() {
@@ -11,6 +13,8 @@ export default function App() {
 
       <Hero />
 
+      <Story />
+
       <main className="space-y-24">
         <section id="products" className="px-6 max-w-7xl mx-auto">
           <Products />
@@ -19,6 +23,8 @@ export default function App() {
         <section id="founder" className="px-6 max-w-6xl mx-auto">
           <Founder />
         </section>
+
+        <YeaPitch />
 
         <section id="contact" className="px-6 max-w-4xl mx-auto pb-24">
           <Contact />

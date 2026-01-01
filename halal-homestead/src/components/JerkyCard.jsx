@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 export default function JerkyCard({
   image,
   title,
@@ -6,63 +8,85 @@ export default function JerkyCard({
   ingredients,
   contains,
 }) {
+  const [isFlipped, setIsFlipped] = useState(false)
+
   return (
-    <div className="
-      bg-white rounded-xl overflow-hidden
-      shadow transition-all duration-300
-      hover:-translate-y-2 hover:shadow-xl
-    ">
-      <img
-        src={image}
-        alt={title}
-        className="h-56 w-full object-cover transition-transform duration-500 hover:scale-105"
-      />
-
-      <div className="p-6 space-y-4">
-        <h3 className="text-2xl font-bold">{title}</h3>
-
-        <p className="italic text-gray-600">
-          “{quote}”
-        </p>
-
-        {/* Nutrition Facts */}
-        <div className="border-2 border-black p-4 text-sm animate-fade-in">
-          <h4 className="text-lg font-black border-b-4 border-black pb-1 mb-2">
-            Nutrition Facts
-          </h4>
-
-          <div className="flex justify-between font-bold border-b py-1">
-            <span>Calories</span>
-            <span>{nutrition.calories}</span>
+    <div
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+      className="h-96"
+      style={{ perspective: '1000px' }}
+    >
+      <div
+        className="relative w-full h-full transition-transform duration-500"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        }}
+      >
+        {/* Front - Image & Quote */}
+        <div
+          className="absolute w-full h-full bg-white rounded-xl overflow-hidden shadow"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="h-56 w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+          <div className="p-6 flex flex-col justify-between h-40">
+            <div>
+              <h3 className="text-xl font-bold mb-3">{title}</h3>
+              <p className="italic text-gray-600 text-sm">"{quote}"</p>
+            </div>
+            <p className="text-xs text-gray-500 text-center">Hover to see details</p>
           </div>
-
-          <div className="space-y-1 mt-2">
-            {nutrition.rows.map((r, i) => (
-              <div
-                key={i}
-                className={`flex justify-between ${
-                  r.indent ? 'pl-4' : ''
-                } ${r.bold ? 'font-bold' : ''}`}
-              >
-                <span>{r.label}</span>
-                <span>{r.value}</span>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-3 text-xs border-t pt-2">
-            * Percent Daily Values are based on a 2,000 calorie diet.
-          </p>
         </div>
 
-        {/* Ingredients */}
-        <div className="text-sm">
-          <p>
-            <span className="font-semibold">Ingredients:</span> {ingredients}
-          </p>
-          <p className="mt-1 font-medium">
-            Contains: {contains}
-          </p>
+        {/* Back - Nutrition & Ingredients */}
+        <div
+          className="absolute w-full h-full bg-white rounded-xl overflow-y-auto shadow p-6 flex flex-col"
+          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+        >
+          <div className="flex-1">
+            {/* Nutrition Facts */}
+            <div className="border-2 border-black p-3 text-sm mb-4">
+              <h4 className="text-sm font-black border-b-2 border-black pb-1 mb-2">
+                Nutrition Facts
+              </h4>
+
+              <div className="flex justify-between font-bold border-b py-1 text-xs">
+                <span>Calories</span>
+                <span>{nutrition.calories}</span>
+              </div>
+
+              <div className="space-y-1 mt-2">
+                {nutrition.rows.map((r, i) => (
+                  <div
+                    key={i}
+                    className={`flex justify-between text-xs ${
+                      r.indent ? 'pl-4' : ''
+                    } ${r.bold ? 'font-bold' : ''}`}
+                  >
+                    <span>{r.label}</span>
+                    <span>{r.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ingredients */}
+            <div className="text-xs space-y-2">
+              <p>
+                <span className="font-semibold">Ingredients:</span> {ingredients}
+              </p>
+              <p className="font-medium">
+                Contains: {contains}
+              </p>
+            </div>
+          </div>
+
+          <p className="text-xs text-gray-500 text-center mt-3">Hover away to close</p>
         </div>
       </div>
     </div>
