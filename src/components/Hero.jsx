@@ -73,7 +73,7 @@ export default function Hero() {
             Authentic <span className="text-amber-400">Halal</span> Jerky for the <span className="text-amber-400">DMV</span>
           </h1>
           
-          <p className="mt-4 text-lg text-gray-100">Handcrafted with premium beef, traditional recipes, and 100% Halal. The protein snack you've been waiting for to be shelved.</p>
+          <p className="mt-4 text-lg text-gray-100">Premium beef, traditional recipies, and 100% Halal. The protein snack you've been waiting for.</p>
           
           <div className="mt-8 flex gap-4 justify-center">
             <a href="#story" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1">See What We Offer</a>

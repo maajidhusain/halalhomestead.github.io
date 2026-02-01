@@ -65,7 +65,7 @@ export default function Story() {
             Born from a Love of <span className="text-red-600">Family</span> & <span className="text-green-700">Flavor</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Halal Homestead started as a passion to give this unique snack to local Muslim communities because it wasn't readily available in the DMV area. Now, with over three years of business, the demand is only increasing.
+            Halal Homestead began as a passion project to provide this unique snack to the local Muslim communities, as it was not readily available in the DMV area. Over the past three years, the demand for their products has only grown.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Story() {
             {
               icon: '❤️',
               title: 'Made with Love',
-              desc: 'Every piece is handcrafted with passion and attention to detail, just like homemade should be.'
+              desc: 'Every piece is made with passion and attention to detail, just like homemade should be.'
             },
             {
               icon: '👥',
