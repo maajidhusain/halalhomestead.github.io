@@ -27,9 +27,9 @@ export default function JerkyCard({
         }}
       >
         {/* Front - Image & Quote */}
-        <divbg-white rounded-xl overflow-hidden shadow flex flex-col"
-          style={{ backfaceVisibility: 'hidden', minHeight: '380px-white rounded-xl overflow-hidden shadow"
-          style={{ backfaceVisibility: 'hidden' }}
+        <div
+          className="absolute w-full bg-white rounded-xl overflow-hidden shadow flex flex-col"
+          style={{ backfaceVisibility: 'hidden', minHeight: '380px' }}
         >
           <img
             src={image}
