@@ -4,6 +4,7 @@ import Story from './components/Story'
 import Products from './components/Products'
 import Founder from './components/Founder'
 import YeaPitch from './components/YeaPitch'
+import OARPartnership from './components/OARPartnership'
 import Contact from './components/Contact'
 
 export default function App() {
@@ -25,6 +26,8 @@ export default function App() {
         </section>
 
         <YeaPitch />
+
+        <OARPartnership />
 
         <section id="contact" className="px-6 max-w-4xl mx-auto pb-24">
           <Contact />

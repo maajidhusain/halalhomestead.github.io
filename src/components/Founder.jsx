@@ -31,9 +31,10 @@ export default function Founder() {
           <div className="prose max-w-none text-slate-800">
             <p>Hi! My name is Muhammad Zaahid Husain and I am a current Sophomore at Lightridge High School in the Northern Virginia area.</p>
 
-            <p>When I realized that my local Muslim community hadn’t tried jerky because it wasn’t readily available and Halal, I decided to start selling Halal jerky as a youth initiative. After two years, the target market was demanding for more jerky from us.</p>
+            <p>When I realized that my local Muslim community hadn’t tried jerky because it wasn’t readily available and Halal, I decided to start selling Halal jerky as a youth initiative. Two years later, the target market was demanding for more jerky from us.</p>
+            <p>What started as a small passion project has now blossomed into a full fledged business that serves the local Muslim community at events throughout the DMV area. My goal is to continue to grow Halal Homestead and provide quality Halal jerky to more people in the future.</p>
 
-            <p>In April 2025, I won the Loudoun County Young Entrepreneur Academy’s (YEA!) investor pitch competition, receiving $1500 seed funding. Since then business has been blooming, and we have been creating new products to meet the demand.</p>
+            <p>Thank you for supporting Halal Homestead and our mission to provide delicious Halal jerky to the community!</p>
           </div>
         </div>
       </div>
